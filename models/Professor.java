@@ -11,7 +11,12 @@ public class Professor {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name.matches("")) {
+
+            this.name = name;
+        } else {
+
+        }
     }
 
     public String getSurname() {
