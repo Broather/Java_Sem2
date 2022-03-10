@@ -24,7 +24,7 @@ public class Grade {
         return course;
     }
 
-    public void setId(int id) {
+    public void setId() {
         this.id = idCounter++;
     }
 
@@ -50,6 +50,24 @@ public class Grade {
         } else {
             this.course = new Course();
         }
+    }
+
+    public Grade() {
+        setId();
+        setGradeValue(-1);
+        setCourse(new Course());
+        setStudent(new Student());
+    }
+
+    public Grade(int gradeValue, Course course, Student student) {
+        setId();
+        setGradeValue(gradeValue);
+        setCourse(course);
+        setStudent(student);
+    }
+
+    public String toString() {
+        return id + " " + gradeValue + " " + course.getTitle() + " " + student.getName() + " " + student.getSurname();
     }
 
 }

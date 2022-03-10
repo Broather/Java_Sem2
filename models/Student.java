@@ -55,4 +55,7 @@ public class Student {
         setSurname(surname);
     }
 
+    public String toString() {
+        return id + " " + name + " " + surname;
+    }
 }
