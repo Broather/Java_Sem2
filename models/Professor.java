@@ -64,4 +64,8 @@ public class Professor {
         setSurname(surname);
         setDegree(ProfDegree.notknown);
     }
+
+    public String toString() {
+        return name + " " + surname + " " + degree;
+    }
 }
