@@ -74,4 +74,8 @@ public class Course {
         setCreditPoints(creditPoints);
         setProfessor(null);
     }
+
+    public String toString() {
+        return id + ": " + title + " " + creditPoints + " " + professor;
+    }
 }
