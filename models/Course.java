@@ -30,16 +30,16 @@ public class Course {
 
     public void setTitle(String title) {
         // regex for 1 big letter and one or more spaces or digits or small letters
-        if (title != null && title.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[\\s\\da-zēūīļķģšāžčņA-ZĒŪĪĀŠĢĶĻŅČŽ]+")) {
+        if (title != null && title.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[\\s\\d/a-zēūīļķģšāžčņA-ZĒŪĪĀŠĢĶĻŅČŽ]+")) {
             this.title = title;
         } else {
             this.title = "notknown";
         }
     }
 
-    public void setCreditPoints(byte creditPoints) {
+    public void setCreditPoints(int creditPoints) {
         if (creditPoints > 0 && creditPoints <= 20) {
-            this.creditPoints = creditPoints;
+            this.creditPoints = (byte) creditPoints;
         } else {
             this.creditPoints = -1;
         }
@@ -61,21 +61,14 @@ public class Course {
         setProfessor(null);
     }
 
-    public Course(String title, byte creditPoints, Professor professor) {
+    public Course(String title, int creditPoints, Professor professor) {
         setId();
         setTitle(title);
         setCreditPoints(creditPoints);
         setProfessor(professor);
     }
 
-    public Course(String title, byte creditPoints) {
-        setId();
-        setTitle(title);
-        setCreditPoints(creditPoints);
-        setProfessor(null);
-    }
-
     public String toString() {
-        return id + ": " + title + " " + creditPoints + " " + professor;
+        return id + ": " + title + ", " + creditPoints + "KP, " + professor.getName() + " " + professor.getSurname();
     }
 }
