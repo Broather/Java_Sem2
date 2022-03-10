@@ -6,6 +6,7 @@ public class Professor {
     // zinam visas visas vērtības kādas degree var būt, tāpēc lietojam enum
     private ProfDegree degree;
 
+    // set/get funkcijas
     public String getName() {
         return name;
     }
@@ -45,4 +46,22 @@ public class Professor {
         }
     }
 
+    // konstuktori
+    public Professor() {
+        setName("Jānis");
+        setSurname("Ozoliņš");
+        setDegree(ProfDegree.bachelor);
+    }
+
+    public Professor(String name, String surname, ProfDegree degree) {
+        setName(name);
+        setSurname(surname);
+        setDegree(degree);
+    }
+
+    public Professor(String name, String surname) {
+        setName(name);
+        setSurname(surname);
+        setDegree(ProfDegree.notknown);
+    }
 }
