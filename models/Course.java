@@ -1,7 +1,7 @@
 package SEMINARS_2.models;
 
 public class Course {
-    private static int idCounter;
+    private static int idCounter = 100000;
 
     private int id;
     private String title;

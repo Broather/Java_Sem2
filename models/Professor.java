@@ -1,7 +1,7 @@
 package SEMINARS_2.models;
 
 public class Professor {
-    private static int idCounter;
+    private static int idCounter = 0;
     private int id;
     private String name;
     private String surname;
@@ -30,7 +30,7 @@ public class Professor {
     }
 
     public void setName(String name) {
-        // regex priekš "Vārds Otrsvards"
+        // regex priekš "Jānis Pēteris"
         if (name != null && name.matches("([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?){1,2}")) {
 
             this.name = name;
@@ -40,7 +40,7 @@ public class Professor {
     }
 
     public void setSurname(String surname) {
-        // regex priekš "Uzvārds"
+        // regex priekš "Ozoliņš"
         if (surname != null && surname.matches("([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?){1,2}")) {
             this.surname = surname;
 

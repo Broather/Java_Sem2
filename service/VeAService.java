@@ -14,6 +14,7 @@ public class VeAService {
         Course c2 = new Course("Objektorientētā programmēšana 2021/22", 4, prof1);
         Course c3 = new Course("Algoritmu teorija", 4, prof2);
         Course c4 = new Course("Datu Struktūras", 4, prof3);
+
         System.out.println(c1);
         System.out.println(c2);
         System.out.println(c3);
