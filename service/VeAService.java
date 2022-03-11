@@ -1,10 +1,10 @@
-package SEMINARS_2.service;
+package normalJava.SEMINARS_2.service;
 
-import SEMINARS_2.models.Course;
-import SEMINARS_2.models.Grade;
-import SEMINARS_2.models.ProfDegree;
-import SEMINARS_2.models.Professor;
-import SEMINARS_2.models.Student;
+import normalJava.SEMINARS_2.models.Course;
+import normalJava.SEMINARS_2.models.Grade;
+import normalJava.SEMINARS_2.models.ProfDegree;
+import normalJava.SEMINARS_2.models.Professor;
+import normalJava.SEMINARS_2.models.Student;
 
 public class VeAService {
     public static void main(String[] args) {

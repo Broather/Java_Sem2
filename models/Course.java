@@ -1,4 +1,4 @@
-package SEMINARS_2.models;
+package normalJava.SEMINARS_2.models;
 
 public class Course {
     private static int idCounter = 100000;

@@ -1,4 +1,4 @@
-package SEMINARS_2.models;
+package normalJava.SEMINARS_2.models;
 
 public class Professor {
     private static int idCounter = 0;
