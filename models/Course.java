@@ -71,4 +71,15 @@ public class Course {
     public String toString() {
         return id + ": " + title + ", " + creditPoints + "KP, " + professor.getName() + " " + professor.getSurname();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Course c = (Course) obj;
+        if (this.title.equals(c.title)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

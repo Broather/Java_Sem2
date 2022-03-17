@@ -83,4 +83,16 @@ public class VeAService {
         }
     }
 
+    // CRUD: create, read, update, delete
+    private static boolean addNewCourse(String title, int creditPoints, Professor professor) {
+        Course course = new Course(title, creditPoints, professor);
+        if (allCourses.contains(course)) {
+            return false;
+        } else {
+            allCourses.add(course);
+            return true;
+
+        }
+    }
+
 }
