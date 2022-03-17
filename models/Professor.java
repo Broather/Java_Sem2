@@ -1,24 +1,16 @@
 package normalJava.SEMINARS_2.models;
 
-public class Professor {
+public class Professor extends Person {
     private static int idCounter = 0;
+
     private int id;
-    private String name;
-    private String surname;
     // zinam visas visas vērtības kādas degree var būt, tāpēc lietojam enum
     private ProfDegree degree;
 
     // set/get funkcijas
-    public String getName() {
-        return name;
-    }
 
     public int getId() {
         return id;
-    }
-
-    public String getSurname() {
-        return surname;
     }
 
     public ProfDegree getDegree() {
@@ -27,26 +19,6 @@ public class Professor {
 
     public void setId() {
         this.id = idCounter++;
-    }
-
-    public void setName(String name) {
-        // regex priekš "Jānis Pēteris"
-        if (name != null && name.matches("([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?){1,2}")) {
-
-            this.name = name;
-        } else {
-            this.name = "notknown";
-        }
-    }
-
-    public void setSurname(String surname) {
-        // regex priekš "Ozoliņš"
-        if (surname != null && surname.matches("([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?){1,2}")) {
-            this.surname = surname;
-
-        } else {
-            this.surname = "notknown";
-        }
     }
 
     public void setDegree(ProfDegree degree) {
@@ -59,27 +31,21 @@ public class Professor {
 
     // konstuktori
     public Professor() {
+        // izsauksim Personas bezargum. konstruktoru
+        super(); // izsauc Person();
         setId();
-        setName("Jānis");
-        setSurname("Ozoliņš");
-        setDegree(ProfDegree.bachelor);
-    }
 
-    public Professor(String name, String surname, ProfDegree degree) {
-        setId();
-        setName(name);
-        setSurname(surname);
-        setDegree(degree);
-    }
-
-    public Professor(String name, String surname) {
-        setId();
-        setName(name);
-        setSurname(surname);
         setDegree(ProfDegree.notknown);
     }
 
+    public Professor(String name, String surname, ProfDegree degree) {
+        // izsakusim Personas argumentu konstuktoru
+        super(name, surname); // izsauc Person(name, surname);
+        setId();
+        setDegree(degree);
+    }
+
     public String toString() {
-        return id + ": " + name + " " + surname + " " + degree;
+        return id + ": " + super.toString() + " " + degree;
     }
 }
