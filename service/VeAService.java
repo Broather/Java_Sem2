@@ -95,4 +95,16 @@ public class VeAService {
         }
     }
 
+    private static Course readCourseById(int courseId) {
+        // courseId jābūt [10000, 100000]
+        if (courseId >= 10000 && courseId < 100000) {
+            for (Course course : allCourses) {
+                if (course.getId() == courseId) {
+                    return course;
+                }
+            }
+        }
+        return new Course();
+    }
+
 }
