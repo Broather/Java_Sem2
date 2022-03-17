@@ -107,4 +107,28 @@ public class VeAService {
         return new Course();
     }
 
+    private static boolean updateCourseById(int courseId, int updateCp, Professor updateProf) {
+        if (courseId >= 10000 && courseId < 100000) {
+            for (Course course : allCourses) {
+                if (course.getId() == courseId) {
+                    course.setCreditPoints(updateCp);
+                    course.setProfessor(updateProf);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean deleteCourseById(int courseId, int updateCp, Professor updateProf) {
+        if (courseId >= 10000 && courseId < 100000) {
+            for (Course course : allCourses) {
+                if (course.getId() == courseId) {
+                    allCourses.remove(course);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
