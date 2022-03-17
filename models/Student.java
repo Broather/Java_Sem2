@@ -1,7 +1,7 @@
 package normalJava.SEMINARS_2.models;
 
 public class Student extends Person {
-    private static int idCounter = 10000;
+    private static int idCounter = 100000;
 
     private int id;
 

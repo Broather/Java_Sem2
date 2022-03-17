@@ -1,7 +1,7 @@
 package normalJava.SEMINARS_2.models;
 
 public class Course {
-    private static int idCounter = 100000;
+    private static int idCounter = 10000;
 
     private int id;
     private String title;
@@ -75,11 +75,9 @@ public class Course {
     @Override
     public boolean equals(Object obj) {
         Course c = (Course) obj;
-        if (this.title.equals(c.title)) {
-            return true;
-        } else {
-            return false;
-        }
+        // compare just course title
+        return this.title.equals(c.title);
+
     }
 
 }
