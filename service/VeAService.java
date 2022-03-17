@@ -68,8 +68,18 @@ public class VeAService {
             System.out.println(grade);
         }
 
+        Person p = new Person("Parasts", "Cilvēks");
+        allPersons.add(p);
+
         for (Person pers : allPersons) {
             System.out.println(pers);
+        }
+
+        for (Person pers : allPersons) {
+            if (pers instanceof Professor) {
+                Professor prof = (Professor) pers;
+                System.out.println(prof.getDegree());
+            }
         }
     }
 
